@@ -4,29 +4,28 @@ import {
     Route,
     Link
 } from 'react-router-dom'
+import Home from './scripts/components/Home';
+import Datepicker from './scripts/components/Datepicker';
+import Listmovies from './scripts/components/Listmovies';
 
 const BasicExample = () => (
     <Router>
         <div>
             <ul>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/home">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/datepicker">Datepicker</Link></li>
                 <li><Link to="/topics">Topics</Link></li>
+                <li><Link to="/listmovies">List Movies</Link></li>
             </ul>
-
             <hr/>
-
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/home" component={Home}/>
             <Route path="/about" component={About}/>
+            <Route path="/datepicker" component={Datepicker}/>
             <Route path="/topics" component={Topics}/>
+            <Route path="/listmovies" component={Listmovies}/>
         </div>
     </Router>
-)
-
-const Home = () => (
-    <div>
-        <h2>Home</h2>
-    </div>
 )
 
 const About = () => (
@@ -35,7 +34,7 @@ const About = () => (
     </div>
 )
 
-const Topics = ({ match }) => (
+const Topics = ({match}) => (
     <div>
         <h2>Topics</h2>
         <ul>
@@ -63,7 +62,7 @@ const Topics = ({ match }) => (
     </div>
 )
 
-const Topic = ({ match }) => (
+const Topic = ({match}) => (
     <div>
         <h3>{match.params.topicId}</h3>
     </div>
