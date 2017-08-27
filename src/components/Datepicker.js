@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {DateRangePicker} from 'react-dates';
-import logo from '../logo.svg';
 import '../App.css';
 import 'react-dates/lib/css/_datepicker.css';
 
@@ -37,10 +36,6 @@ class Datepicker extends Component {
         }
         return (
             <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to React</h2>
-                </div>
                 <DateRangePicker
                     withFullScreenPortal={true}
                     numberOfMonths={2}

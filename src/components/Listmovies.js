@@ -33,8 +33,8 @@ class Listmovies extends Component {
         });
 
         return (
-            <div>
-                <h2>Star Wars Movies coming from wordpress</h2>
+            <div className="container">
+                <h2>Star Wars Movies coming from WP (wapi.webegg.co.uk)</h2>
                 {movies}
             </div>
         )

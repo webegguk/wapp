@@ -14,16 +14,19 @@ import ShowContacts from './components/ShowContacts';
 const BasicExample = () => (
     <Router>
         <div>
-            <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/datepicker">Datepicker</Link></li>
-                <li><Link to="/topics">Topics</Link></li>
-                <li><Link to="/listmovies">List Movies</Link></li>
-                <li><Link to="/showcontacts">Show Contacts</Link></li>
-            </ul>
-            <hr/>
-            <Route exact path="/home" component={Home}/>
+            <div className="container">
+                <nav className="navbar navbar-default">
+                    <ul className="nav navbar-nav">
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/datepicker">Datepicker</Link></li>
+                        <li><Link to="/topics">Topics</Link></li>
+                        <li><Link to="/listmovies">List Movies</Link></li>
+                        <li><Link to="/showcontacts">Show Contacts</Link></li>
+                    </ul>
+                </nav>
+            </div>
+            <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/datepicker" component={Datepicker}/>
             <Route path="/topics" component={Topics}/>
@@ -34,13 +37,13 @@ const BasicExample = () => (
 )
 
 const About = () => (
-    <div>
+    <div className="container">
         <h2>About</h2>
     </div>
 )
 
 const Topics = ({match}) => (
-    <div>
+    <div className="container">
         <h2>Topics</h2>
         <ul>
             <li>
@@ -68,7 +71,7 @@ const Topics = ({match}) => (
 )
 
 const Topic = ({match}) => (
-    <div>
+    <div className="container">
         <h3>{match.params.topicId}</h3>
     </div>
 )
