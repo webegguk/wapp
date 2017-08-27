@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../logo.svg';
 
-
 class Home extends Component {
-
-
     render() {
 
         return (
@@ -20,6 +17,5 @@ class Home extends Component {
         )
     }
 }
-
 
 export default Home;
