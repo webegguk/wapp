@@ -3,10 +3,13 @@ import {
     BrowserRouter as Router,
     Route,
     Link
-} from 'react-router-dom'
-import Home from './scripts/components/Home';
-import Datepicker from './scripts/components/Datepicker';
-import Listmovies from './scripts/components/Listmovies';
+} from 'react-router-dom';
+
+import Home from './components/Home';
+import Datepicker from './components/Datepicker';
+import Listmovies from './components/Listmovies';
+import ShowContacts from './components/ShowContacts';
+
 
 const BasicExample = () => (
     <Router>
@@ -17,6 +20,7 @@ const BasicExample = () => (
                 <li><Link to="/datepicker">Datepicker</Link></li>
                 <li><Link to="/topics">Topics</Link></li>
                 <li><Link to="/listmovies">List Movies</Link></li>
+                <li><Link to="/showcontacts">Show Contacts</Link></li>
             </ul>
             <hr/>
             <Route exact path="/home" component={Home}/>
@@ -24,6 +28,7 @@ const BasicExample = () => (
             <Route path="/datepicker" component={Datepicker}/>
             <Route path="/topics" component={Topics}/>
             <Route path="/listmovies" component={Listmovies}/>
+            <Route path="/showcontacts" component={ShowContacts}/>
         </div>
     </Router>
 )

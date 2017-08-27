@@ -9,7 +9,7 @@ class Listmovies extends Component {
     }
 
     componentDidMount() {
-        let dataURL = "http://local.wapi/wp-json/wp/v2/movies?_embed";
+        let dataURL = "http://wapi.webegg.co.uk/wp-json/wp/v2/movies?_embed";
         fetch(dataURL)
             .then(res => res.json())
             .then(res => {

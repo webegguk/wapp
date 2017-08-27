@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {DateRangePicker} from 'react-dates';
-import logo from '../../logo.svg';
-import '../../App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import 'react-dates/lib/css/_datepicker.css';
 
 class Datepicker extends Component {
