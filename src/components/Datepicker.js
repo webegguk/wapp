@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {DateRangePicker} from 'react-dates';
+// import {DateRangePicker} from 'react-dates';
 import '../App.css';
-import 'react-dates/lib/css/_datepicker.css';
+// import 'react-dates/lib/css/_datepicker.css';
 
 class Datepicker extends Component {
     constructor(props) {
@@ -36,17 +36,17 @@ class Datepicker extends Component {
         }
         return (
             <div className="App">
-                <DateRangePicker
-                    withFullScreenPortal={true}
-                    numberOfMonths={2}
-                    orientation={"vertical"}
-                    isOutsideRange={() => false}
-                    startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                    endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-                    onDatesChange={this.onDatesChange.bind(this)} // PropTypes.func.isRequired,
-                    focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                    onFocusChange={this.onFocusChange.bind(this)} // PropTypes.func.isRequired,
-                />
+                {/*<DateRangePicker*/}
+                    {/*withFullScreenPortal={true}*/}
+                    {/*numberOfMonths={2}*/}
+                    {/*orientation={"vertical"}*/}
+                    {/*isOutsideRange={() => false}*/}
+                    {/*startDate={this.state.startDate} // momentPropTypes.momentObj or null,*/}
+                    {/*endDate={this.state.endDate} // momentPropTypes.momentObj or null,*/}
+                    {/*onDatesChange={this.onDatesChange.bind(this)} // PropTypes.func.isRequired,*/}
+                    {/*focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,*/}
+                    {/*onFocusChange={this.onFocusChange.bind(this)} // PropTypes.func.isRequired,*/}
+                {/*/>*/}
                 <div className="App-days">
                     {message}
                 </div>
