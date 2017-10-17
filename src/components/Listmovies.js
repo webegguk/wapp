@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Listmovies extends Component {
     constructor() {
@@ -10,13 +11,16 @@ class Listmovies extends Component {
 
     componentDidMount() {
         let dataURL = "http://wapi.webegg.co.uk/wp-json/wp/v2/movies?_embed";
-        fetch(dataURL)
-            .then(res => res.json())
-            .then(res => {
+        axios.get(dataURL)
+            .then(response => response.data)
+            .then(response => {
                 this.setState({
-                    movies: res
+                    movies: response
                 })
             })
+            .catch(error => {
+                throw error;
+            });
     }
 
     render() {
