@@ -38,7 +38,7 @@ class Listmovies extends Component {
 
         return (
             <div className="container">
-                <h2>Star Wars Movies coming from WP (wapi.webegg.co.uk)</h2>
+                <h2>Star Wars Movies via Wordpress/Axios</h2>
                 {movies}
             </div>
         )
