@@ -68,7 +68,7 @@ class Contacts extends Component {
                         <ContactForm onAddContact={this.addContact} />
                     </div>
                 </div>
-                <p>The API server is running on a node express instance so needs to be run in a development environment. <a href="https://github.com/webegguk/wapp">Repo is here</a> </p>
+                <p>API Server should now be running on Heroku... :) </p>
             </div>);
     }
 }
