@@ -21,18 +21,18 @@ export default class ContactForm extends React.Component {
                 <form onSubmit={this.onAddClick}>
                     <div className="form-group">
                         <label>Name</label>
-                        <input type="text" className="form-control" ref="name" required/>
+                        <input type="text" className="form-control" ref="name" required />
                     </div>
                     <div className="form-group">
                         <label>Mobile</label>
-                        <input type="text"  className="form-control" ref="mobile" required/>
+                        <input type="text" className="form-control" ref="mobile" required />
                     </div>
                     <div className="form-group">
                         <label>Email</label>
-                        <input type="email"  className="form-control" ref="email" required/>
+                        <input type="email" className="form-control" ref="email" required />
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Add Contact" className="btn btn-xs btn-primary"/>
+                        <input type="submit" value="Add Contact" className="btn btn-xs btn-primary" />
                     </div>
                 </form>
             </div>
