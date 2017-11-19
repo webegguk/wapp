@@ -1,0 +1,11 @@
+.header {
+  background: #343a40;
+  .nav-link{
+    color:#999;
+    &:hover{
+      color:#fff;
+    }
+    padding:1rem;
+  }
+  margin-bottom:50px;
+}
