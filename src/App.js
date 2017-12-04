@@ -5,38 +5,92 @@ import Routes from './Routes';
 import fire from './fire';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { messages: [] }; // <- set up react state
+    constructor() {
+        super();
+        this.state = {
+            currentItem: '',
+            username: '',
+            items: []
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    componentWillMount(){
-        /* Create reference to messages in Firebase Database */
-        let messagesRef = fire.database().ref('messages').orderByKey().limitToLast(100);
-        messagesRef.on('child_added', snapshot => {
-            /* Update React state when message is added at Firebase Database */
-            let message = { text: snapshot.val(), id: snapshot.key };
-            this.setState({ messages: [message].concat(this.state.messages) });
-        })
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
-    addMessage(e){
-        e.preventDefault(); // <- prevent form submit from reloading the page
-        /* Send the message to Firebase */
-        fire.database().ref('messages').push( this.inputEl.value );
-        this.inputEl.value = ''; // <- clear the input
+    handleSubmit(e) {
+        e.preventDefault();
+        const itemsRef = fire.database().ref('items');
+        const item = {
+            title: this.state.currentItem,
+            user: this.state.username
+        }
+        itemsRef.push(item);
+        this.setState({
+            currentItem: '',
+            username: ''
+        });
+    }
+    componentDidMount() {
+        const itemsRef = fire.database().ref('items');
+        itemsRef.on('value', (snapshot) => {
+            let items = snapshot.val();
+            let newState = [];
+            for (let item in items) {
+                newState.push({
+                    id: item,
+                    title: items[item].title,
+                    user: items[item].user
+                });
+            }
+            this.setState({
+                items: newState
+            });
+        });
+    }
+    removeItem(itemId) {
+        const itemRef = fire.database().ref(`/items/${itemId}`);
+        itemRef.remove();
     }
     render() {
         return (
             <div>
                 <Routes/>
-                <form onSubmit={this.addMessage.bind(this)}>
-                    <input type="text" ref={ el => this.inputEl = el }/>
-                    <input type="submit"/>
-                    <ul>
-                        { /* Render the list of messages */
-                            this.state.messages.map( message => <li key={message.id}>{message.text}</li> )
-                        }
-                    </ul>
-                </form>
+                <div className='app'>
+                    <header>
+                        <div className="wrapper">
+                            <h1>Fun Food Friends</h1>
+
+                        </div>
+                    </header>
+                    <div className='container'>
+                        <section className='add-item'>
+                            <form onSubmit={this.handleSubmit}>
+                                <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username} />
+                                <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
+                                <button>Add Item</button>
+                            </form>
+                        </section>
+                        <section className='display-item'>
+                            <div className="wrapper">
+                                <ul>
+                                    {this.state.items.map((item) => {
+                                        return (
+                                            <li key={item.id}>
+                                                <h3>{item.title}</h3>
+                                                <p>brought by: {item.user}
+                                                    <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
+                                                </p>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         )
     }
