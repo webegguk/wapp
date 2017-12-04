@@ -61,14 +61,8 @@ class Home extends Component { constructor() {
                 </div>
                 <div className="container">
                     <h2>Hello from the components folder in react!!</h2>
-                </div>
-                    <div className='container'>
-                        <header>
-                            <div className="wrapper">
                                 <h1>Fun Food Friends</h1>
-
-                            </div>
-                        </header>
+                        <div className="food-friends">
                         <section className='add-item'>
                             <form onSubmit={this.handleSubmit}>
                                 <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username} />
@@ -92,6 +86,7 @@ class Home extends Component { constructor() {
                                 </ul>
                             </div>
                         </section>
+                        </div>
                     </div>
 
 
