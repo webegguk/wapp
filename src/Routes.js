@@ -12,7 +12,7 @@ import ShowContacts from './components/ShowContacts';
 import Food from './components/Food';
 
 
-const App = () => (
+const AppRoutes = () => (
     <Router>
         <div>
         <div className="header">
@@ -83,4 +83,4 @@ const Topic = ({match}) => (
     </div>
 )
 
-export default App
+export default AppRoutes;
