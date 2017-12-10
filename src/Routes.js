@@ -9,9 +9,10 @@ import Home from './components/Home';
 import Datepicker from './components/Datepicker';
 import Listmovies from './components/Listmovies';
 import ShowContacts from './components/ShowContacts';
+import Food from './components/Food';
 
 
-const BasicExample = () => (
+const App = () => (
     <Router>
         <div>
         <div className="header">
@@ -24,6 +25,7 @@ const BasicExample = () => (
                         <li className="nav-item"><Link className="nav-link" to="/topics">Topics</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/listmovies">List Movies</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/showcontacts">Show Contacts</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/food">Fun Food Friends</Link></li>
                     </ul>
                 </nav>
             </div>
@@ -35,6 +37,7 @@ const BasicExample = () => (
             <Route path="/topics" component={Topics}/>
             <Route path="/listmovies" component={Listmovies}/>
             <Route path="/showcontacts" component={ShowContacts}/>
+            <Route path="/food" component={Food}/>
         </div>
         </div>
     </Router>
@@ -80,4 +83,4 @@ const Topic = ({match}) => (
     </div>
 )
 
-export default BasicExample
+export default App
