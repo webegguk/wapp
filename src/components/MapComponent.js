@@ -58,7 +58,7 @@ class MapComponent extends Component {
   componentWillUnmount() {
     window.google.maps.event.clearListeners(this.listener1)
   }
-
+  
   componentDidMount() {
     this.bounds = new window.google.maps.LatLngBounds()
     this.geocoder = new window.google.maps.Geocoder()
@@ -121,7 +121,7 @@ class MapComponent extends Component {
 }
 
 export default GoogleApiWrapper(
-  (props) => (
-    ({apiKey}) => ({apiKey})
-  )
+  (props) => ({
+    apiKey: props.apiKey
+  })
 )(MapComponent)
