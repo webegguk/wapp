@@ -82,7 +82,7 @@ form button {
   width: 100%;
   margin-top: 10px; }
 
-button {
+.food-friends button {
   border-radius: 2px;
   min-width: 88px;
   background-color: #FA6900;
@@ -94,13 +94,13 @@ button {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 10px 6px; }
 
-.user-profile {
+.food-friends .user-profile {
   position: fixed;
   bottom: 20px;
   right: 40px;
   width: 100px;
   height: 100px; }
 
-.user-profile img {
+.food-friends .user-profile img {
   border-radius: 50%;
   max-width: 100%; }
