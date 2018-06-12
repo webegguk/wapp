@@ -91,9 +91,6 @@ app.delete("/api/contacts/:id", function(req, res) {
     }
   });
 });
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/build/index.html"));
-});
 
 app.listen(app.get("port"), function() {
   console.log("Server started: http://localhost:" + app.get("port") + "/");
